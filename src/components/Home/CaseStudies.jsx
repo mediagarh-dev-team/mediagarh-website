@@ -195,6 +195,21 @@ const cardVariants = {
 /* ------------------------------------------------------------------ */
 function CaseCard({ item }) {
   const [open, setOpen] = useState(false);
+  const touchStart = useRef(null);
+
+  // Touch tap detection: only toggle if finger didn't scroll (moved < 8px)
+  const handleTouchStart = (e) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+  };
+  const handleTouchEnd = (e) => {
+    if (!touchStart.current) return;
+    const t = e.changedTouches[0];
+    const dx = Math.abs(t.clientX - touchStart.current.x);
+    const dy = Math.abs(t.clientY - touchStart.current.y);
+    touchStart.current = null;
+    if (dx < 8 && dy < 8) setOpen((o) => !o); // actual tap
+  };
 
   return (
     <motion.article
@@ -202,8 +217,8 @@ function CaseCard({ item }) {
       tabIndex={0}
       onPointerEnter={(e) => e.pointerType === 'mouse' && setOpen(true)}
       onPointerLeave={(e) => e.pointerType === 'mouse' && setOpen(false)}
-      // touch devices par tap se toggle
-      onPointerDown={(e) => e.pointerType !== 'mouse' && setOpen((o) => !o)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       onFocus={() => setOpen(true)}
       onBlur={() => setOpen(false)}
       className="relative flex min-h-[300px] min-w-0 flex-col justify-between overflow-hidden rounded-[8px] bg-white p-5 outline-none focus-visible:ring-2 focus-visible:ring-[#0954FD] xl:p-[24px]"
