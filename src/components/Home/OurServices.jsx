@@ -188,7 +188,7 @@ function ServiceRow({ item, index, open, onOpen, onClose, onToggle }) {
                       playsInline
                       preload="metadata"
                       disablePictureInPicture
-                      className="size-full object-cover  rounded-lg"
+                      className="size-full object-cover rounded-[8px]"
                     />
                   </motion.div>
                 </div>

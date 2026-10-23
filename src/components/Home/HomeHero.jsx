@@ -142,7 +142,7 @@ export default function HomeHero() {
   };
 
   return (
-    <section className="pb-1.5 pt-[14px] sm:px-[14px] sm:pb-2">
+    <section className="pb-1.5 pt-[14px] px-[14px] sm:pb-2">
       {/* isolate = apna stacking context. z-order: bg(0) < circle(10) < content/slider(20) */}
       <div className="relative overflow-hidden rounded-[10px] bg-black sm:rounded-[14px] lg:h-[calc(100svh-90px)] lg:min-h-[720px]">
         {/* Layer 1 — sabse neeche: background image */}
@@ -159,7 +159,7 @@ export default function HomeHero() {
 
         {/* Layer 2 — bg ke upar, content ke neeche: circle */}
         <div
-          className="pointer-events-none absolute -right-[120px] top-[2%] w-[280px] sm:-right-[160px] sm:w-[380px] md:top-[4%] md:w-[440px] lg:-right-[12vw] lg:top-[50%] lg:w-[33vw] lg:min-w-[340px] lg:-translate-y-1/2 xl:w-[734px] min-[1400px]:left-[calc(50%+510px)] min-[1400px]:right-auto min-[1400px]:w-[30vw]"
+          className="pointer-events-none absolute -right-[50%] top-[2%] w-[280px] sm:-right-[160px] sm:w-[380px] md:top-[4%] md:w-[440px] lg:-right-[12vw] lg:top-[50%] lg:w-[33vw] lg:min-w-[340px] min-w-[480px] lg:-translate-y-1/2 translate-y-6/6 xl:w-[734px] min-[1400px]:left-[calc(50%+510px)] min-[1400px]:right-auto min-[1400px]:w-[30vw]"
           style={{ zIndex: 1 }}
         >
           <motion.div
@@ -351,7 +351,7 @@ export default function HomeHero() {
             initial={{ opacity: 0, x: 80 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: EASE }}
-            className="relative mt-12 min-w-0 lg:mt-0 lg:h-full"
+            className="relative mt-12 min-w-0 lg:mt-0 lg:h-full lg:mx-0 mx-[-14px]"
           >
             {/* Desktop par absolute: Swiper ki height grid ko push nahi karegi,
                 isse left content apni jagah rahega aur slider ko fixed height milegi */}
