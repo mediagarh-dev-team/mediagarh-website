@@ -7,6 +7,7 @@
 
 @theme inline {
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-clash: var(--font-clash-display), ui-sans-serif, system-ui, sans-serif;
   --font-clash-display: var(--font-clash-display), ui-sans-serif, system-ui, sans-serif;
   --color-brand-orange: #f04b1d;
   --color-brand-black: #090909;
@@ -95,7 +96,7 @@ button {
 @layer utilities {
   .custom-container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1432px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 16px;

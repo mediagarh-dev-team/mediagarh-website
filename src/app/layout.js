@@ -6,6 +6,7 @@ import Footer from "@/components/Layout/Footer";
 
 const clashDisplay = localFont({
   src: [
+    { path: "./fonts/ClashDisplay-Light.woff2", weight: "300" },
     { path: "./fonts/ClashDisplay-Regular.woff2", weight: "400" },
     { path: "./fonts/ClashDisplay-Medium.woff2", weight: "500" },
     { path: "./fonts/ClashDisplay-Semibold.woff2", weight: "600" },
