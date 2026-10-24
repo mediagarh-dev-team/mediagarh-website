@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -256,8 +255,8 @@ function CaseCard({ item }) {
       <motion.div
         aria-hidden={!open}
         initial={false}
-        animate={{ clipPath: open ? 'inset(0% 0% 0% 0%)' : 'inset(100% 0% 0% 0%)' }}
-        transition={{ duration: 0.55, ease: EASE }}
+        animate={{ opacity: open ? 1 : 0 }}
+        transition={{ duration: 0.8, ease: EASE }}
         className={`absolute inset-0 flex flex-col justify-end overflow-hidden rounded-[inherit] bg-black p-5 text-white xl:p-6 ${
           open ? 'pointer-events-auto' : 'pointer-events-none'
         }`}
