@@ -299,15 +299,25 @@ export default function Footer() {
       {/* Single bg image: alag GPU layer me, ek baar raster hokar cache hoti hai */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={process.env.IMG_PATH + FOOTER_BG}
+        src={process.env.IMG_PATH + 'images/home/footer-bg.svg'}
         alt=""
         aria-hidden="true"
         decoding="async"
         draggable={false}
-        className="pointer-events-none absolute inset-0 -z-10 size-full select-none object-cover object-center"
+        className="lg:block hidden pointer-events-none absolute inset-0 -z-10 size-full select-none object-cover object-center"
         style={{ transform: 'translateZ(0)' }}
       />
-
+      {/* Single bg image: alag GPU layer me, ek baar raster hokar cache hoti hai */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={process.env.IMG_PATH + 'images/home/footer-responsive.svg'}
+        alt=""
+        aria-hidden="true"
+        decoding="async"
+        draggable={false}
+        className="lg:hidden block pointer-events-none absolute inset-0 -z-10 size-full select-none object-cover object-center"
+        style={{ transform: 'translateZ(0)' }}
+      />
       {/* ================= CTA ================= */}
       <div className="custom-container relative z-10 pb-[90px] pt-[36px] text-center sm:pb-[130px] lg:pb-[200px] lg:pt-[44px]">
         <RankBadge />
