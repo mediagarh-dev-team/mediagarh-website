@@ -102,4 +102,12 @@ button {
     padding-left: 16px;
     padding-right: 16px;
   }
+  .custom-container-2 {
+    width: 100%;
+    max-width: 1572px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
