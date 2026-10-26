@@ -179,7 +179,6 @@ export default function HomeHero() {
             />
           </motion.div>
         </div>
-
         {/* Layer 3 — sabse upar: main content + slider */}
         <div
           className="relative mx-auto flex h-full custom-container flex-col pb-10 pt-12 sm:pt-16 lg:grid lg:min-h-0 lg:grid-cols-[1fr_380px] lg:grid-rows-1 lg:items-center lg:gap-10 lg:py-0 xl:grid-cols-[1fr_502px] min-[1400px]:grid-cols-[1fr_502px] min-[1400px]:px-0"

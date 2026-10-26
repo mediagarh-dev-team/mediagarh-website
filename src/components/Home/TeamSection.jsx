@@ -40,18 +40,18 @@ const GRAD_BOTTOM_UP = 'linear-gradient(180deg, #F0F0F0 0%, #FFF 100%)'; // phot
   A = placeholder, gradient #FFF -> #F0F0F0 (photo ke upar)
   B = placeholder, gradient #F0F0F0 -> #FFF (photo ke neeche)
   offset: odd columns thode neeche se start hote hain
-  show: kis breakpoint se column dikhega (5 cols mobile, 7 tab, 9 desktop)
+  Ab saare 9 columns har screen size par dikhte hain.
 */
 const COLUMNS = [
-  { tiles: ['I', 'B', 'I', 'B'], offset: true, show: 'hidden lg:flex' },
-  { tiles: ['A', 'I', 'B', 'I'], offset: false, show: 'hidden md:flex' },
-  { tiles: ['A', 'I', 'B'], offset: true, show: 'flex' },
-  { tiles: ['A', 'I'], offset: false, show: 'flex' },
-  { tiles: ['A', 'I'], offset: true, show: 'flex' },
-  { tiles: ['A', 'I'], offset: false, show: 'flex' },
-  { tiles: ['A', 'I', 'B'], offset: true, show: 'flex' },
-  { tiles: ['A', 'I', 'B', 'I'], offset: false, show: 'hidden md:flex' },
-  { tiles: ['I', 'B', 'I', 'B'], offset: true, show: 'hidden lg:flex' },
+  { tiles: ['I', 'B', 'I', 'B'], offset: true },
+  { tiles: ['A', 'I', 'B', 'I'], offset: false },
+  { tiles: ['A', 'I', 'B'], offset: true },
+  { tiles: ['A', 'I'], offset: false },
+  { tiles: ['A', 'I'], offset: true },
+  { tiles: ['A', 'I'], offset: false },
+  { tiles: ['A', 'I', 'B'], offset: true },
+  { tiles: ['A', 'I', 'B', 'I'], offset: false },
+  { tiles: ['I', 'B', 'I', 'B'], offset: true },
 ];
 
 // Har photo tile ko ek global index (0..12) milta hai
@@ -89,7 +89,7 @@ const fadeUp = {
 function useParallaxAmount() {
   const [amp, setAmp] = useState(34);
   useEffect(() => {
-    const update = () => setAmp(window.innerWidth < 640 ? 14 : window.innerWidth < 1024 ? 22 : 36);
+    const update = () => setAmp(window.innerWidth < 640 ? 10 : window.innerWidth < 1024 ? 22 : 36);
     update();
     window.addEventListener('resize', update);
     return () => window.removeEventListener('resize', update);
@@ -97,7 +97,8 @@ function useParallaxAmount() {
   return amp;
 }
 
-const tileShape = 'aspect-[106/143] w-full rounded-[8px]';
+// Mobile par radius chhota, sm se 8px
+const tileShape = 'aspect-[106/143] w-full rounded-[4px] sm:rounded-[8px]';
 
 /* ------------------------------------------------------------------ */
 /* Tiles                                                               */
@@ -119,7 +120,7 @@ function PhotoTile({ member, flipped, instant, delay }) {
       >
         {/* Front: photo */}
         <div
-          className="absolute inset-0 overflow-hidden rounded-[8px]"
+          className="absolute inset-0 overflow-hidden rounded-[4px] sm:rounded-[8px]"
           style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
         >
           <Image
@@ -127,7 +128,7 @@ function PhotoTile({ member, flipped, instant, delay }) {
             alt={`${member.name}, ${member.role} at Mediagarh`}
             title={member.name}
             fill
-            sizes="(min-width: 1024px) 11vw, (min-width: 768px) 14vw, 20vw"
+            sizes="(min-width: 1024px) 11vw, 12vw"
             className="object-cover"
             quality={100}
             unoptimized
@@ -136,7 +137,7 @@ function PhotoTile({ member, flipped, instant, delay }) {
 
         {/* Back: placeholder */}
         <div
-          className="absolute inset-0 rounded-[8px]"
+          className="absolute inset-0 rounded-[4px] sm:rounded-[8px]"
           style={{
             background: GRAD_BOTTOM_UP,
             backfaceVisibility: 'hidden',
@@ -158,11 +159,8 @@ function TeamColumn({ col, colIndex, progress, amp, flipped, delays, instant }) 
   const y = useTransform(progress, [0, 1], goesUp ? [amp, -amp] : [-amp, amp]);
 
   return (
-    <motion.div
-      variants={columnVariants}
-      className={`min-w-0 flex-1 flex-col ${col.show} ${col.offset ? 'mt-[4%]' : ''}`}
-    >
-      <motion.div style={{ y }} className="flex flex-col gap-2 lg:gap-3">
+    <motion.div variants={columnVariants} className={`flex min-w-0 flex-1 flex-col ${col.offset ? 'mt-[4%]' : ''}`}>
+      <motion.div style={{ y }} className="flex flex-col gap-1 sm:gap-2 lg:gap-3">
         {col.tiles.map((tile, i) => {
           if (tile.type === 'I') {
             return (
@@ -227,7 +225,7 @@ export default function TeamSection() {
 
   return (
     <section className="overflow-hidden bg-white py-[44px] sm:py-[64px] lg:py-[80px]">
-      <div className="custom-container-2">
+      <div className="custom-container-2 px-3 sm:px-4">
         <div ref={wrapRef} className="relative">
           {/* ============ Columns ============ */}
           <motion.div
@@ -235,7 +233,7 @@ export default function TeamSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.15 }}
-            className="flex items-start gap-2 md:min-h-[620px] lg:min-h-0 lg:gap-3"
+            className="flex items-start gap-1 sm:gap-2 md:min-h-[620px] lg:min-h-0 lg:gap-3"
           >
             {COLUMNS_WITH_INDEX.map((col, i) => (
               <TeamColumn
