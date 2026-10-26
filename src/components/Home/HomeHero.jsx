@@ -158,7 +158,10 @@ export default function HomeHero() {
 
         {/* Layer 2 — bg ke upar, content ke neeche: circle */}
         <div
-          className="pointer-events-none absolute -right-[50%] top-[2%] w-[280px] sm:-right-[160px] sm:w-[380px] md:top-[4%] md:w-[440px] lg:-right-[12vw] lg:top-[50%] lg:w-[33vw] lg:min-w-[340px] min-w-[480px] lg:-translate-y-1/2 translate-y-6/6 xl:w-[734px] min-[1200px]:left-[calc(50%+510px)] min-[1400px]:left-[calc(50%+610px)] min-[1400px]:right-auto min-[1400px]:w-[30vw]"
+          className="pointer-events-none absolute -right-[50%] top-[2%] w-[280px] sm:-right-[160px] sm:w-[380px] md:top-[4%]
+           md:w-[440px] lg:-right-[12vw] lg:top-[50%] lg:w-[33vw] lg:min-w-[340px] min-w-[480px] lg:-translate-y-1/2 translate-y-6/6
+            xl:w-[734px] xl:left-[calc(50%_+_510px)]
+2xl:left-[calc(50%_+_610px)] min-[1400px]:right-auto min-[1400px]:w-[30vw]"
           style={{ zIndex: 1 }}
         >
           <motion.div
