@@ -332,9 +332,9 @@ export default function Footer() {
               className="group inline-flex h-[48px] items-center gap-3 rounded-[8px] bg-white pl-5 pr-1.5 text-[15px] font-medium text-black transition-transform duration-300 hover:-translate-y-0.5 sm:h-[68px] sm:text-[20px]"
             >
               Book a consultation
-              <span className="flex size-9 items-center justify-center rounded-[6px] bg-[#2F4BFF] text-white sm:size-10">
+              <span className="flex size-9 items-center justify-center rounded-[6px] bg-[#2F4BFF] text-white sm:size-[52px]">
                 <ArrowRight
-                  size={16}
+                  size={22}
                   strokeWidth={2.4}
                   className="transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-rotate-[20deg]"
                 />
@@ -383,10 +383,10 @@ export default function Footer() {
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="group absolute right-1.5 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-[6px] bg-white text-black transition-transform duration-300 hover:scale-105"
+                className="group absolute right-1.5 top-1/2 flex size-[46px] -translate-y-1/2 items-center justify-center rounded-[6px] bg-white text-black transition-transform duration-300 hover:scale-105"
               >
                 <ArrowRight
-                  size={16}
+                  size={22}
                   strokeWidth={2.4}
                   className="transition-transform duration-500 group-hover:-rotate-[20deg]"
                 />
