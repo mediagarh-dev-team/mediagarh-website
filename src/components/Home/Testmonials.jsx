@@ -1,12 +1,11 @@
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Marquee from 'react-fast-marquee';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
+import DragMarquee from '@/components/Common/DragMarquee';
 
 const EASE = [0.22, 1, 0.36, 1];
-const MARQUEE_SPEED = 40;
 
 const ROW_1 = [
   {
@@ -286,8 +285,6 @@ function VideoCard({ item }) {
 }
 
 function MarqueeRow({ items, direction, order }) {
-  const reduceMotion = useReducedMotion();
-
   return (
     <motion.div
       variants={rowReveal}
@@ -295,22 +292,15 @@ function MarqueeRow({ items, direction, order }) {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.15 }}
+      className="cursor-grab active:cursor-grabbing"
     >
-      <Marquee
-        direction={direction}
-        speed={MARQUEE_SPEED}
-        pauseOnHover
-        autoFill
-        play={!reduceMotion}
-        // marquee ke aas-paas ka extra scroll/overflow na aaye
-        className="overflow-hidden!"
-      >
+      <DragMarquee direction={direction}>
         {items.map((item) => (
-          <div key={item.id} className="mr-4 lg:mr-5 pt-5">
+          <div key={item.id} className="mr-4 pt-5 lg:mr-5">
             {item.type === 'video' ? <VideoCard item={item} /> : <QuoteCard item={item} />}
           </div>
         ))}
-      </Marquee>
+      </DragMarquee>
     </motion.div>
   );
 }
