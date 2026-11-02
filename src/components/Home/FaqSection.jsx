@@ -20,15 +20,42 @@ const FAQS = [
     q: 'What is Mediagarh, and what do they specialize in?',
     a: 'Mediagarh offers digital marketing for educational institutions through its special set of services, which include performance marketing, SEO, creative branding, etc. They have special expertise in scaling educational brands digitally to drive admissions growth.',
   },
-  { q: 'What kind of institutions does Mediagarh work with?', a: 'TODO: add answer.' },
-  { q: 'Where is Mediagarh located?', a: 'TODO: add answer.' },
-  { q: 'What services does your agency offer?', a: 'TODO: add answer.' },
-  { q: 'What kind of deliverables can I expect?', a: 'TODO: add answer.' },
-  { q: 'What if I only need certain services?', a: 'TODO: add answer.' },
-  { q: 'Can you work with our existing team?', a: 'TODO: add answer.' },
-  { q: 'Who will work on my project?', a: 'TODO: add answer.' },
-  { q: 'Do you work with newly established schools, colleges, etc.?', a: 'TODO: add answer.' },
-  { q: 'Can you work on tight deadlines in case of events in the institute?', a: 'TODO: add answer.' },
+  {
+    q: 'What kind of institutions does Mediagarh work with?',
+    a: 'Mediagarh works with all kinds of educational institutions, ranging from schools to colleges and universities.',
+  },
+  {
+    q: 'Where is Mediagarh located?',
+    a: "Mediagarh's offices are present across Jodhpur, Jaipur, and Bangalore. However, the team works 100% remotely and is capable of handling clients globally.",
+  },
+  {
+    q: 'What services does your agency offer?',
+    a: 'Mediagarh offers end-to-end education marketing services, ranging from SEO, web design & development, and creative design & production to lead automation and PR activities.',
+  },
+  {
+    q: 'What kind of deliverables can I expect?',
+    a: 'All our clients get a full-funnel strategy based on their target customer personas. All our services are subtly integrated into the funnel for an effective admission cycle.',
+  },
+  {
+    q: 'What if I only need certain services?',
+    a: "That's not a problem. Whether you need SEO only or want to focus 100% on paid media, we can alter our focus accordingly.",
+  },
+  {
+    q: 'Can you work with our existing team?',
+    a: 'Absolutely. Many of our clients already have in-house marketing teams when they start working with us. We integrate into your existing workflow instead of asking you to change the way your team works.',
+  },
+  {
+    q: 'Who will work on my project?',
+    a: 'We deploy a team of 8 people for your project, which includes a project manager, account manager, social media executive, performance marketer, SEO specialist, content writer, and other relevant team members from our education marketing company.',
+  },
+  {
+    q: 'Do you work with newly established schools, colleges, etc.?',
+    a: 'Yes. We have firm expertise in scaling institutes that are starting from scratch.',
+  },
+  {
+    q: 'Can you work on tight deadlines in case of events in the institute?',
+    a: 'Yes. We have successfully managed huge events for multiple clients with timely designs and social media posting (and also ads, if required).',
+  },
 ];
 
 /* ------------------------------------------------------------------ */
